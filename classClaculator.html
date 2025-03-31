@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Class Calculator</h1>
+    <h3>Enter your GPA value:</h3>
+    <input
+      type="number"
+      name="num"
+      id="num"
+      style="
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      "
+    />
+    <button
+      style="
+        background-color: rgb(81, 246, 81);
+        color: white;
+        border-radius: 8px;
+        padding: 10px 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: none;
+        cursor: pointer;
+      "
+      onclick="calculateGPA()"
+    >
+      Calculate Class
+    </button>
+    <h3 id="result"></h3>
+
+    <script>
+      function calculateGPA() {
+        let gpa = Number(document.getElementById("num").value);
+        if (4 >= gpa && gpa >= 3.7) {
+          document.getElementById("result").innerHTML =
+            "Your GPA is " +
+            gpa +
+            ". You fall under the category of Frist Class";
+        } else if (3.7 > gpa && gpa >= 3.3) {
+          document.getElementById("result").innerHTML =
+            "Your GPA is " +
+            gpa +
+            ". You fall under the category of Second class upper division";
+        } else if (3.3 > gpa && gpa >= 3.0) {
+          document.getElementById("result").innerHTML =
+            "Your GPA is " +
+            gpa +
+            ". You fall under the category of Second class lower division";
+        } else if (3.0 > gpa && gpa >= 2.0) {
+          document.getElementById("result").innerHTML =
+            "Your GPA is " + gpa + ". You fall under the category of Pass";
+        } else if (2.0 > gpa && gpa >= 0) {
+          document.getElementById("result").innerHTML =
+            "Your GPA is " + gpa + ". You fall under the category of FAil";
+        } else if (gpa > 4 || gpa < 0) {
+          document.getElementById("result").innerHTML =
+            "Please enter a valid GPA value";
+        } else {
+          document.getElementById("result").innerHTML =
+            "Please enter a valid GPA value";
+        }
+      }
+    </script>
+  </body>
+</html>
